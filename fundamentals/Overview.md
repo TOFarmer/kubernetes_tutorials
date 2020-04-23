@@ -16,6 +16,12 @@ Some of Kubernetes key features are:
 - Secret and configuration management
 - Horizontal scaling
 
+Key components of Kubernetes include:
+
+- [Pods](#pods)
+- [Deployments](#deployments)
+- [Services](#services)
+
 ## Pods
 
 The fundamental element of Kubernetes is the [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/).  A Pod provides a single "logical host"
@@ -24,7 +30,10 @@ run.  Although it is common for there to be a one-to-one correspondence of
 pods to containers, if containers are tightly coupled (e.g. share namespaces,
 ip address, volumes) then they should exist within the same pod.  It is the pod architecture which enables horizontal scaling within Kubernetes.
 
+## Deployments
 
+
+## Services
 
 
 
