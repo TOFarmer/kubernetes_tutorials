@@ -58,8 +58,19 @@ Kubectl is the command line tool for managing Kubernetes servers.
 
 
 
+## Clients
 
+It is interesting to note that Kubernetes has some officially supported client
+[libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/),
+including one for [Python](https://github.com/kubernetes-client/python).  This
+can be installed from PyPI:
 
+```
+pip install kubernetes
+```
+
+Using these clients it is possible to do things like list all pods or watch on a
+namespace using the client language.
 
 ## Examples
 
