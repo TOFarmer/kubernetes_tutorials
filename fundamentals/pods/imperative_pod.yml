@@ -1,0 +1,45 @@
+# An example of the imperative approach to Kubernetes Pod creation, using a yml
+# file
+
+# First we have to specify the API version, which defines the fields which are
+# valid
+apiVersion: v1
+# In this example we are creating a Pod
+kind: Pod
+metadata:
+  name: my-nginx
+  # Labels are metadata which allowing referencing of a Pod (e.g. by a service)
+  labels:
+      app: nginx
+      rel: stable
+# The spec defines the Pod, including which containers will run within in
+spec:
+    containers:
+      # The name of the container and the image from which the container is
+      # built
+      - name: my-nginx
+        image: nginx:alpine
+        ports:
+          # Which ports are open for the container
+          - containerPort: 80
+
+
+# Now for the kubectl commands relating to the imperative approach
+
+# It is possible to create a Pod using the apply command:
+#
+#   kubectl apply -f imperative_pod.yml
+#
+# The -f flag is used to pass the filename from which the Pod is created. The
+# apply command can also be used for making changes to a Pod which has
+# previously been created from a .yml file (by modifying the .yml file). So we
+# could change the version of the image in the .yml file, use kubectl apply
+# again, and it would change the container in the Pod.
+#
+# It is also possible to create a Pod using the create command:
+#
+#   kubectl create -f imperative_pod.yml
+#
+# However by default this does not allow for modification of the Pod using the
+# apply command (you need to include the --save-config flag).  Therefore it
+# seems simpler just to always use apply for both Pod creation and modification. 
