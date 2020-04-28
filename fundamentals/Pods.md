@@ -1,6 +1,7 @@
 # Pods
 
-The fundamental element of Kubernetes is the [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/).
+The fundamental element of Kubernetes is the
+[Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/).
 
 As previously mentioned, a Pod provides a single "logical host" (equivalent to a
 single physical or virtual machine) on which one or more containers can run.
@@ -34,9 +35,13 @@ Using a series of kubectl commands which configures the pod (Declarative). See
 kubectl commands used for the declarative approach.
 
 ### Imperative
+
 Using a YAML file which contains the configuration of the pod, which we then
 pass to either `kubectl create` or `kubectl apply` (Imperative). There are a
 number of example YAML files in pods, with explanations of there purposes in
 [Examples](#examples).
 
 ## Examples
+
+[Declarative shell commands](./pods/declarative_pod.sh)
+[Imperative yml file and shell commands](./pods/imperative_pod.sh)
